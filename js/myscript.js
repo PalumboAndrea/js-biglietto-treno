@@ -7,6 +7,7 @@
 //  L'output del prezzo finale va emesso (presentato all'utente) in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
 
+
 const kmToDo = parseInt(prompt("Inserie i chilometri da percorrere"));
 console.log(kmToDo);
 document.getElementById('km-to-do').innerHTML = 'Tratto da effettuare: ' + kmToDo + 'km;';
@@ -39,8 +40,10 @@ let priceAfterDiscount;
 
 if (age < 18){
     priceAfterDiscount = (priceEveryKm - (priceEveryKm * teensDiscount));
-} else {
+} else if (age >= 65){
     priceAfterDiscount = (priceEveryKm - (priceEveryKm * overDiscount));
+} else{
+    priceAfterDiscount = priceEveryKm
 }
 
 console.log(priceAfterDiscount);
